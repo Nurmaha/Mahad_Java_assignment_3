@@ -1,0 +1,133 @@
+import java.util.Scanner;
+
+public class StringComparator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input first string
+        System.out.print("Enter the first string: ");
+        String firstString = scanner.nextLine();
+
+        // Input second string
+        System.out.print("Enter the second string: ");
+        String secondString = scanner.nextLine();
+
+        // Compare strings using compareTo method
+        int comparisonResult = firstString.compareTo(secondString);
+
+        // Output comparison result
+        if (comparisonResult < 0) {
+            System.out.println("The first string is less than the second string.");
+        } else if (comparisonResult == 0) {
+            System.out.println("The first string is equal to the second string.");
+        } else {
+            System.out.println("The first string is greater than the second string.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+import random
+
+# Define arrays of words
+articles = ["the", "a", "one", "some", "any"]
+nouns = ["boy", "girl", "dog", "town", "car"]
+verbs = ["drove", "jumped", "ran", "walked", "skipped"]
+prepositions = ["to", "from", "over", "under", "on"]
+
+# Generate and display 20 random sentences
+for _ in range(20):
+    sentence = random.choice(articles).capitalize()  # Start with a capitalized article
+    sentence += " " + random.choice(nouns)
+    sentence += " " + random.choice(verbs)
+    sentence += " " + random.choice(prepositions)
+    sentence += " " + random.choice(articles)
+    sentence += " " + random.choice(nouns) + "."
+    print(sentence)
+
+
+
+exercise 14.6
+
+
+import java.util.Random;
+
+public class RandomLimerickGenerator {
+    private static Random random = new Random();
+
+    private static String[] firstSecondFifthRhymes = {"cat", "hat", "bat", "mat"};
+    private static String[] thirdFourthRhymes = {"funny", "sunny", "money", "honey"};
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            String limerick = generateLimerick();
+            System.out.println(limerick);
+        }
+    }
+
+    private static String generateLimerick() {
+        String firstLine = getRandomWord(firstSecondFifthRhymes);
+        String secondLine = getRandomWord(firstSecondFifthRhymes);
+        String thirdLine = getRandomWord(thirdFourthRhymes);
+        String fourthLine = getRandomWord(thirdFourthRhymes);
+        String fifthLine = getRandomWord(firstSecondFifthRhymes);
+
+        String limerick = String.format("There once was a %s from %s\nWho %s %s %s\nAnd %s it was %s,\nSo %s it was %s,\nThat %s from %s %s.",
+                firstLine, getRandomWord(firstSecondFifthRhymes), getRandomVerb(), getRandomAdverb(), secondLine,
+                thirdLine, getRandomVerb(), fourthLine,
+                getRandomAdjective(), fifthLine, getRandomWord(firstSecondFifthRhymes), getRandomAdverb());
+        return limerick;
+    }
+
+    private static String getRandomWord(String[] array) {
+        return array[random.nextInt(array.length)];
+    }
+
+    private static String getRandomVerb() {
+        String[] verbs = {"laughed", "cried", "danced", "jumped"};
+        return verbs[random.nextInt(verbs.length)];
+    }
+
+    private static String getRandomAdverb() {
+        String[] adverbs = {"merrily", "sadly", "gracefully", "awkwardly"};
+        return adverbs[random.nextInt(adverbs.length)];
+    }
+
+    private static String getRandomAdjective() {
+        String[] adjectives = {"silly", "happy", "grumpy", "sleepy"};
+        return adjectives[random.nextInt(adjectives.length)];
+    }
+}
+
+
+
+14.9 
+
+
+import java.util.Scanner;
+
+public class ReverseWords {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input a line of text
+        System.out.println("Enter a line of text:");
+        String line = scanner.nextLine();
+
+        // Tokenize the line using split method
+        String[] tokens = line.split(" ");
+
+        // Output tokens in reverse order
+        System.out.println("Reversed words:");
+        for (int i = tokens.length - 1; i >= 0; i--) {
+            System.out.print(tokens[i] + " ");
+        }
+
+        scanner.close();
+    }
+}
+
+
+ 
